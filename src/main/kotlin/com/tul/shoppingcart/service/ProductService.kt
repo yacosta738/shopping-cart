@@ -45,7 +45,19 @@ class ProductService(
      */
     fun saveProduct(product: Product): Product {
         log.info("Saving product: $product")
+        // trim product name
+        product.name = product.name?.trim()
         return productRepository.save(product)
+    }
+
+    /**
+     * Delete a product by id
+     * @param id Product id
+     *
+     */
+    fun deleteProduct(id: UUID) {
+        log.info("Deleting product with id: $id")
+        productRepository.deleteById(id)
     }
 
 }
