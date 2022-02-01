@@ -7,6 +7,7 @@ import java.util.*
 
 /**
  * Spring Data SQL repository for the [Product] entity.
+ * @author acosta
  */
 @Suppress("unused")
 @Repository

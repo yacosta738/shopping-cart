@@ -8,6 +8,7 @@ import java.util.*
 
 /**
  * Spring Data SQL repository for the [CartItem] entity.
+ * @author acosta
  */
 @Suppress("unused")
 @Repository

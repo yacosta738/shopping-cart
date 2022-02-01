@@ -13,6 +13,7 @@ import java.util.UUID
 
 /**
  * A Product.
+ * @author acosta
  */
 
 @Entity

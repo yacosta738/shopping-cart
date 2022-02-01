@@ -10,6 +10,7 @@ import java.io.Serializable
 
 /**
  * A CartItem.
+ * @author acosta
  */
 
 @Entity

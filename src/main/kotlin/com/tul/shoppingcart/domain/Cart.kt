@@ -12,6 +12,7 @@ import javax.persistence.*
 
 /**
  * A Cart.
+ * @author acosta
  */
 
 @Entity
