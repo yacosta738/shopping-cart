@@ -1,20 +1,16 @@
-package com.tul.shoppingcart
+package com.tul.shoppingcart.controller
 
 import com.tul.shoppingcart.domain.Cart
 import com.tul.shoppingcart.domain.Product
 import com.tul.shoppingcart.dto.ProductQuantity
 import com.tul.shoppingcart.service.ProductService
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.MediaType
-import org.springframework.http.ResponseEntity
 import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
-import org.springframework.test.web.reactive.server.EntityExchangeResult
 import org.springframework.test.web.reactive.server.WebTestClient
 import org.testcontainers.containers.PostgreSQLContainer
 import org.springframework.test.web.reactive.server.expectBody
@@ -25,7 +21,7 @@ import org.testcontainers.junit.jupiter.Testcontainers
 @Testcontainers
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWebTestClient
-class CartControllerIT {
+class CartControllerTest {
 
     @Autowired
     private lateinit var webTestClient: WebTestClient

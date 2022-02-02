@@ -15,7 +15,7 @@ services:
       - APP_DB_USER=tul
       - APP_DB_PASS=tul
       - APP_DB_NAME=shop
-#    volumes:
-#      - ./db:/docker-entrypoint-initdb.d/
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/
     ports:
       - "5432:5432"
