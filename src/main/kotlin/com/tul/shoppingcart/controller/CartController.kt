@@ -84,12 +84,12 @@ class CartController(private val cartService: CartService) {
             .build()
     }
     /**
-     * PUT /carts/:id/update-product : Update product quantity in cart.
+     * PUT /carts/:id/products : Update product quantity in cart.
      * @param id the id of the cart to update product.
      * @param product the product to update.
      * @return the [ResponseEntity] with status `200 (OK)` and with body the cart, or with status `404 (Not Found)`.
      */
-    @PutMapping("/carts/{id}/update-product")
+    @PutMapping("/carts/{id}/products")
     fun updateProductQuantityInCart(@PathVariable id: UUID, @RequestBody product: ProductQuantity): ResponseEntity<Cart> {
         log.debug("REST request to update product quantity in cart : $id")
         val cart = cartService.updateProductQuantityInCart(id, product.productId, product.quantity)
