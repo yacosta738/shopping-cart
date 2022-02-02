@@ -10,7 +10,10 @@ import org.springframework.web.server.ResponseStatusException
 import java.net.URI
 import java.util.*
 import javax.validation.Valid
-
+/**
+ * REST controller for managing [com.tul.shoppingcart.domain.Product].
+ * @author yuniel acosta
+ */
 @RestController
 @RequestMapping("/api")
 class ProductController(private val productService: ProductService) {
@@ -30,7 +33,7 @@ class ProductController(private val productService: ProductService) {
     /**
      *  `GET /products/{id}` Get a product by id.
      *  @param id the id of the product to retrieve.
-     *  @return the ResponseEntity with status 200 (OK) and with body the product, or with status 404 (Not Found)
+     *  @return the  [ResponseEntity] with status 200 (OK) and with body the product, or with status 404 (Not Found)
      */
     @GetMapping("/products/{id}")
     fun getProduct(@PathVariable id: UUID): ResponseEntity<Product> {
@@ -43,7 +46,7 @@ class ProductController(private val productService: ProductService) {
     /**
      * `POST /products` Create a new product.
      * @param product the product to create.
-     * @return the ResponseEntity with status 201 (Created) and with body the new product, or with status 400 (Bad Request) if the product has already an ID
+     * @return the  [ResponseEntity] with status 201 (Created) and with body the new product, or with status 400 (Bad Request) if the product has already an ID
      */
     @PostMapping("/products")
     fun createProduct(@Valid @RequestBody product: Product): ResponseEntity<Product> {
@@ -60,7 +63,7 @@ class ProductController(private val productService: ProductService) {
      * `PUT /products/{id}` Update an existing product.
      * @param id the id of the product to update.
      * @param product the product to update.
-     * @return the ResponseEntity with status 200 (OK) and with body the updated product,
+     * @return the  [ResponseEntity] with status 200 (OK) and with body the updated product,
      *          or with status 400 (Bad Request) if the product is not valid,
      *          or with status 500 (Internal Server Error) if the product couldn't be updated
      *          or with status 404 (Not Found) if the product with the given id doesn't exist
@@ -88,7 +91,7 @@ class ProductController(private val productService: ProductService) {
     /**
      * `DELETE /products/{id}` Delete a product by id.
      * @param id the id of the product to delete.
-     * @return the ResponseEntity with status 200 (OK)
+     * @return the  [ResponseEntity] with status 204 (NO_CONTENT)
      */
     @DeleteMapping("/products/{id}")
     fun deleteProduct(@PathVariable id: UUID): ResponseEntity<Void> {

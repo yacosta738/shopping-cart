@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional
  * @author acosta
  */
 @Service
+@Transactional
 class ProductService(
     private val productRepository: ProductRepository // Injected ProductRepository
 ) {
